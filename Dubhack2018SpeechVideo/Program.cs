@@ -88,15 +88,18 @@ namespace Dubhack2018SpeechVideo
 
                 string[] imgPaths = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\img\"), "*.jpg");
                 List<FaceAttributes> attribs = new List<FaceAttributes>();
+                List<Task> tasks = new List<Task>();
 
                 foreach (string imgPath in imgPaths)
                 {
-                    var t2 = DetectLocalAsync(faceClient, imgPath, attribs);
+                    tasks.Add(DetectLocalAsync(faceClient, imgPath, attribs));
                 }
 
-                Console.WriteLine("Happy?: " + ((attribs.Average(a => a.Smile).Value > .5) ? "Yeah buddy" : "Nope, Grumpy cat"));
+                Task.WaitAll(tasks.ToArray());
 
-
+                double happiness = attribs.Average(a => a.Smile.Value);
+                Console.WriteLine($"Happy? ({happiness}): " + (happiness > 0.5 ? "Yeah buddy" : "Nope, Grumpy cat"));
+                
                 Console.ReadKey();
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Dubhacks2018AVWinForms
 {
-    partial class Form1
+    partial class Charlie
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.videoFileTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.outputTextbox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,16 +49,20 @@
             // 
             // videoFileTextBox
             // 
-            this.videoFileTextBox.Location = new System.Drawing.Point(148, 20);
+            this.videoFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.videoFileTextBox.Location = new System.Drawing.Point(147, 12);
             this.videoFileTextBox.Name = "videoFileTextBox";
-            this.videoFileTextBox.Size = new System.Drawing.Size(640, 26);
+            this.videoFileTextBox.Size = new System.Drawing.Size(1193, 26);
             this.videoFileTextBox.TabIndex = 1;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Location = new System.Drawing.Point(13, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(392, 385);
+            this.pictureBox1.Size = new System.Drawing.Size(392, 615);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -65,24 +70,43 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // outputTextbox
+            // 
+            this.outputTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.outputTextbox.Location = new System.Drawing.Point(411, 53);
+            this.outputTextbox.Multiline = true;
+            this.outputTextbox.Name = "outputTextbox";
+            this.outputTextbox.Size = new System.Drawing.Size(929, 494);
+            this.outputTextbox.TabIndex = 3;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(412, 53);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox1.Location = new System.Drawing.Point(411, 553);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 385);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.Size = new System.Drawing.Size(737, 115);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Form1
+            // Charlie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1352, 680);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.outputTextbox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.videoFileTextBox);
             this.Controls.Add(this.videoButton);
-            this.Name = "Form1";
+            this.Name = "Charlie";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -96,6 +120,7 @@
         private System.Windows.Forms.TextBox videoFileTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox outputTextbox;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
