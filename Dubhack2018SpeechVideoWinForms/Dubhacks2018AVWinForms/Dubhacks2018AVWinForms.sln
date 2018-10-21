@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dubhack2018SpeechVideo", "Dubhack2018SpeechVideo\Dubhack2018.csproj", "{FA4EF22F-246D-45D5-9DB6-4E960E71F0D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dubhack2018", "..\..\Dubhack2018SpeechVideo\Dubhack2018.csproj", "{FA4EF22F-246D-45D5-9DB6-4E960E71F0D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F96294CB-F6B2-4C06-BAFD-ECA871029900}
+		SolutionGuid = {F8F8BB0C-992D-4D7F-9ED8-2BDD0D964888}
 	EndGlobalSection
 EndGlobal

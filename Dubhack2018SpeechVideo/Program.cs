@@ -87,18 +87,22 @@ namespace Dubhack2018SpeechVideo
                 };
 
                 string[] imgPaths = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\img\"), "*.jpg");
-                                
+                List<FaceAttributes> attribs = new List<FaceAttributes>();
+
                 foreach (string imgPath in imgPaths)
                 {
-                    var t2 = DetectLocalAsync(faceClient, imgPath);
+                    var t2 = DetectLocalAsync(faceClient, imgPath, attribs);
                 }
+
+                Console.WriteLine("Happy?: " + ((attribs.Average(a => a.Smile).Value > .5) ? "Yeah buddy" : "Nope, Grumpy cat"));
+
 
                 Console.ReadKey();
             }
         }
 
         // Detect faces in a local image
-        private static async Task DetectLocalAsync(FaceClient faceClient, string imagePath)
+        private static async Task DetectLocalAsync(FaceClient faceClient, string imagePath, List<FaceAttributes> attribs)
         {
             if (!File.Exists(imagePath))
             {
@@ -106,8 +110,6 @@ namespace Dubhack2018SpeechVideo
                     "\nUnable to open or read localImagePath:\n{0} \n", imagePath);
                 return;
             }
-
-            List<FaceAttributes> attribs = new List<FaceAttributes>();
 
             try
             {
@@ -130,7 +132,6 @@ namespace Dubhack2018SpeechVideo
                 Console.WriteLine(imagePath + ": " + e.Message);
             }
 
-            Console.WriteLine("Happy?: " + ((attribs.Average(a => a.Smile).Value > .5) ? "Yeah buddy" : "Nope, Grumpy cat"));
         }
 
         private static string GetFaceAttributes(DetectedFace face, List<FaceAttributes> attribs)
